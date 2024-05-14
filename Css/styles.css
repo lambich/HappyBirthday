@@ -45,6 +45,7 @@ body {
 .card-input .user-input h1{
     font-size: 16px;
     text-align: center;
+    font-family: 'Cursive', Arial, sans-serif;
 }
 .card-input {
     animation: fadeIn 1s ease-out;
