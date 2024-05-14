@@ -65,10 +65,10 @@ body {
     padding: 30px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     color: #000;
-    font-family: 'Pacifico', cursive;
   }
 
 .user-input {
+    padding-top: 120px;
     display: flex;  /* Use flexbox to layout children */
     flex-direction: column;
     justify-content: center;  /* Center children horizontally */
@@ -87,11 +87,11 @@ input[type="text"] {
 button {
     padding: 10px 20px;
     cursor: pointer;
-    background-color: #4CAF50;  /* Green, or choose your color */
+    background-color: #00a305;  /* Green, or choose your color */
     color: white;
     border: none;
     border-radius: 5px;  /* Rounded corners for the button */
-    width: 50%;  /* Ensure button width is less than input for balance */
+    width: 70%;  /* Ensure button width is less than input for balance */
 }
 
 .card-inner {
@@ -269,5 +269,12 @@ button {
     align-items: center;
     top: 10px; /* Adjust position as needed */
     position: absolute;
+}
+.lambich {
+    height: 130px;
+    align-items: center;
+    top: 40px; /* Adjust position as needed */
+    position: absolute;
+    border-radius: 50%;
 }
 
