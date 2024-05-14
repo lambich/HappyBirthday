@@ -1,0 +1,193 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Hide overflow caused by card flipping */
+    background: linear-gradient(to right, #6ee7b7, #3b82f6, #9333ea); /* A vibrant background */
+    font-family: 'Cursive', Arial, sans-serif;
+}
+.text-container {
+    background-color: rgb(126, 124, 255); /* White background */
+    color:#fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center alignment of all content */
+    justify-content: center;
+}
+.text-container-front {
+    background-color: rgb(255, 255, 255); /* White background */
+    padding: 5px;
+    margin: 5px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center alignment of all content */
+    justify-content: center;
+}
+.card {
+    width: 250px;
+    height: 450px;
+    perspective: 1000px;
+    border-radius: 20px;
+}
+
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.card-front, .card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.4); /* Reduced opacity for more transparency */
+    backdrop-filter: blur(10px); /* Maintains the frosted glass effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px; /* Increased padding for better spacing */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    color: #000;
+    font-family: 'Dancing Script', cursive;
+}
+
+.card-front {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.6)); 
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    color: #000;
+}
+
+.card-back {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.6));
+    transform: rotateY(180deg);
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+
+
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+@keyframes sparkle {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
+
+.sparkle {
+    position: absolute;
+    width: 30px; /* Larger size */
+    height: 30px; /* Larger size */
+    background-color: #fff;
+    border-radius: 50%;
+    animation: sparkle 1.5s ease-in-out infinite;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.9); /* Optional: adds glow */
+}
+
+/* More sparkles with different colors and positions */
+.sparkles .sparkle:nth-child(1) {
+    background-color: #FF6347; /* Tomato */
+    box-shadow: 0 0 15px 5px #FF6347;
+    animation-delay: 0s;
+    left: 10%;
+    top: 10%;
+}
+
+.sparkles .sparkle:nth-child(2) {
+    background-color: #4682B4; /* SteelBlue */
+    box-shadow: 0 0 15px 5px #4682B4; 
+    animation-delay: 0.2s;
+    right: 10%;
+    top: 20%;
+}
+
+.sparkles .sparkle:nth-child(3) {
+    background-color: #32CD32; /* LimeGreen */
+    box-shadow: 0 0 15px 5px #32CD32;
+    animation-delay: 0.4s;
+    left: 20%;
+    bottom: 10%;
+}
+
+.sparkles .sparkle:nth-child(4) {
+    background-color: #FFD700; /* Gold */
+    box-shadow: 0 0 15px 5px #FFD700; 
+    animation-delay: 0.6s;
+    right: 5%;
+    bottom: 20%;
+}
+
+.sparkles .sparkle:nth-child(5) {
+    background-color: #C71585; /* MediumVioletRed */
+    box-shadow: 0 0 15px 5px #C71585;
+    animation-delay: 0.8s;
+    left: 30%;
+    top: 30%;
+}
+
+
+.decoration {
+    position: absolute;
+    top: 135px;
+    width: auto; /* Adjust based on your design preference */
+    height: 50px; /* Adjust based on your design preference */
+    z-index: 0; /* Ensures they are behind the text container */
+}
+
+.balloons {
+    top: 10px;
+    height: 270px;
+    align-items: center;
+    position: absolute;
+}
+.balloon2 {
+    height: 180px;
+    left: 0px;
+    top: 380px; /* Adjust position as needed */
+    position: absolute;
+}
+
+.cone-hat {
+    right: 10px;
+    height: 100px;
+    top: 400px; /* Adjust position as needed */
+    position: absolute;
+}
+.sparkles2 {
+    height: 200px;
+    left: 10px;
+    top: 10px; /* Adjust position as needed */
+    position: absolute;
+}
+.HappyBirthDay {
+    height: 100px;
+    align-items: center;
+    top: 10px; /* Adjust position as needed */
+    position: absolute;
+}
+
