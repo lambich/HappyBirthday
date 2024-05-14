@@ -37,7 +37,64 @@ body {
     perspective: 1000px;
     border-radius: 20px;
 }
+.card-input .user-input h1{
+    font-size: 16px;
+}
+.card-input {
+    animation: fadeIn 1s ease-out;
+}
+.card-input {
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.4); /* Reduced opacity for more transparency */
+    backdrop-filter: blur(10px); /* Maintains the frosted glass effect */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px; /* Increased padding for better spacing */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    color: #000;
+    font-family: 'Pacifico', cursive;
+}
 
+.user-input {
+    display: flex;  /* Use flexbox to layout children */
+    flex-direction: column;
+    justify-content: center;  /* Center children horizontally */
+    align-items: center;  /* Align children vertically */
+    gap: 10px;  /* Space between the input and the button */
+    margin-bottom: 20px; 
+}
+
+input[type="text"] {
+    padding: 5px;
+    width: 100%;  /* Adjusted for visual balance */
+    border: 1px solid #ccc;
+    border-radius: 5px;  /* Rounded corners for the input */
+}
+
+button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #4CAF50;  /* Green, or choose your color */
+    color: white;
+    border: none;
+    border-radius: 5px;  /* Rounded corners for the button */
+    width: 50%;  /* Ensure button width is less than input for balance */
+}
+
+.card-inner {
+    animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 
 .card-inner {
     width: 100%;
@@ -46,6 +103,12 @@ body {
     transform-style: preserve-3d;
     position: relative;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+.card-back .text-container-front p {
+    margin-top: 0; /* Removes top margin from the header */
+    margin-bottom: 10px; /* Reduces space below the header */
+    font-size: 16px; /* Adjust font size as needed */
+    font-family: 'Dancing Script', cursive; /* Applies the specified font */
 }
 
 .card-front, .card-back {
@@ -153,7 +216,7 @@ body {
 
 .decoration {
     position: absolute;
-    top: 135px;
+    top: 155px;
     width: auto; /* Adjust based on your design preference */
     height: 50px; /* Adjust based on your design preference */
     z-index: 0; /* Ensures they are behind the text container */

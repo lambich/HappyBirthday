@@ -9,7 +9,15 @@
 </head>
 <body>
     <div class="card">
-        <div class="card-inner">
+        <div class="card-input">
+            <div class="user-input">
+                <h1>Nhập tên mình để tự nhận thiệp nhé !!!</h1>
+                <input type="text" id="nameInput" placeholder="Enter your name here" autofocus>
+                <br>
+                <button id="enterButton">Enter</button>
+            </div>
+        </div>
+        <div class="card-inner" style="display: none;">
             <div class="card-front">
                 <img src="Img/HappyBirthDay.png" alt="HappyBirthDay" class="HappyBirthDay">
                 <div class="text-container">
@@ -32,8 +40,12 @@
                 <img src="Img/Balloons2.png" alt="Balloons3" class="balloon2">
                 <div class="text-container-front">
                     <h1>Join the Celebration!</h1>
-                    <p>Name: <b>Hồng Ngọc</b></p>
-                    <p>Date: May 17, 2024 - Time: 7:00 PM</p>
+                    <p></p>
+                    <p></p>
+                    <p></p>
+                    <p>Name: <b id="dynamicName"></b></p>
+                    <p>Date: May 17, 2024</p>
+                    <p>Time: 7:00 PM</p>
                     <p>Location: Hadilao restaurant</p>
                     <p>Sự hiện diện của bạn là niềm hạnh phúc của tôi</p>
                     <p>Thank You</p>
