@@ -1,42 +1,31 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
     var card = document.querySelector('.card');
     var cardInner = card.querySelector('.card-inner');
     var flipped = false;  // State to track whether the card is flipped
-    var canFlip = false;  // Control flag to enable flipping
 
-    function addFlipEvents() {
-        card.addEventListener('mouseenter', function() {
-            if (!flipped && canFlip) {  // Check if flipping is enabled
-                cardInner.style.transform = 'rotateY(180deg)';
-                flipped = true;
-            }
-        });
-
-        card.addEventListener('mouseleave', function() {
-            if (flipped && canFlip) {
-                cardInner.style.transform = 'rotateY(0deg)';
-                flipped = false;
-            }
-        });
-
-        card.addEventListener('touchstart', function() {
-            if (!flipped && canFlip) {  // For touch devices
-                cardInner.style.transform = 'rotateY(180deg)';
-                flipped = true;
-            }
-        });
-
-        card.addEventListener('touchend', function() {
-            if (flipped && canFlip) {
-                cardInner.style.transform = 'rotateY(0deg)';
-                flipped = false;
-            }
-        });
+    function toggleFlip() {
+        if (!flipped) {
+            cardInner.style.transform = 'rotateY(180deg)';
+            flipped = true;
+        } else {
+            cardInner.style.transform = 'rotateY(0deg)';
+            flipped = false;
+        }
     }
 
-    function enableFlip() {
-        canFlip = true;
-    }
+    // Event listener for tapping on the card
+    card.addEventListener('click', function(event) {
+        toggleFlip();
+        event.stopPropagation(); // Stop the event from bubbling up
+    });
+
+    // Event listener for tapping outside the card to unflip it
+    document.addEventListener('click', function() {
+        if (flipped) {
+            cardInner.style.transform = 'rotateY(0deg)';
+            flipped = false;
+        }
+    });
 
     window.onload = function() {
         function showCard() {
@@ -49,15 +38,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (document.activeElement) {
                     document.activeElement.blur();
                 }
-
-                setTimeout(enableFlip, 1000); // Delay flip enabling for 1 second
             } else {
                 alert("Please enter a name.");
             }
         }
 
         document.getElementById("enterButton").onclick = showCard;
-
-        addFlipEvents(); // Add events initially but flipping is controlled by `canFlip`
     }
 });
