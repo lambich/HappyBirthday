@@ -32,6 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
             var name = document.getElementById("nameInput").value;
             if (name.trim() !== "") {
                 document.getElementById("dynamicName").textContent = name;
+                document.getElementById("dynamicName").style.color = "Red";
                 document.querySelector(".card-inner").style.display = "block";
                 document.querySelector(".card-input").style.display = "none";
 
