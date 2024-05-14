@@ -76,6 +76,7 @@ body {
     align-items: center;  /* Align children vertically */
     gap: 10px;  /* Space between the input and the button */
     margin-bottom: 20px; 
+    font-size: 1.5em;
 }
 
 input[type="text"] {
